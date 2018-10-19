@@ -19,34 +19,35 @@
                             <small>Author</small>
                         </h1>
 
-                        <table class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Author</th>
-                                    <th>Title</th>
-                                    <th>Category</th>
-                                    <th>Status</th>
-                                    <th>Image</th>
-                                    <th>Tags</th>
-                                    <th>Comments</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>10</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                        </table>
+                     <?php
+                     if(isset($_GET['source'])){
+                         $source = $_GET['source'];
+                     }else{
+                        $source = '';  
+                     }
+                     
+                     switch($source){
+
+                        case '34';
+                        echo "nice";
+                        break;
+                        
+                        case '35';
+                        echo "nice";
+                        break;
+                        
+                        case '36';
+                        echo "nice";
+                        break;
+
+                        default:
+
+                        include "includes/view_all_posts.php";
+
+
+
+                     }
+                     ?>
                        
 
                     </div>
