@@ -81,8 +81,6 @@
        echo "<option value='{$cat_id}'>{$cat_title}</option>";
    }
    ?>
-   
-   
    </select>
     </div>
 
