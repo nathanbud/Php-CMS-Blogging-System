@@ -48,6 +48,48 @@
                 <hr>
 <?php }  ?>
 
+<!-- Blog Comments -->
+<?php
+if(isset($_POST['create_comment'])){
+    $the_post_id = $_GET['p_id'];
+
+   $comment_author = $_POST['comment_author'];
+   $comment_email = $_POST['comment_email'];
+   $comment_content = $_POST['comment_content'];
+
+$query = "INSERT INTO comments(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date)";
+$query.="VALUES($the_post_id, '{$comment_author}','{$comment_email}', '{$comment_content}', 'unapproved', now() )";
+
+$insert_comment = mysqli_query($connection,$query );
+
+if( !$insert_comment){
+    die("QUERY FAILED". mysqli_error($connection));
+  }else{
+      Echo "new comment added";
+  } 
+}
+
+
+
+?>
+                <div class="well">
+                    <h4>Leave a Comment</h4>
+                    <form action="" method="post" role="form">
+                        <div class="form-group">
+                            <label for="author">Author</label>
+                            <input type="text" name="comment_author" id="" class="form-control"></input>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" name="comment_email" id="" class="form-control"></text>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Your Comment</label>
+                            <textarea name="comment_content" id="" cols="30" rows="3" class="form-control"></textarea>
+                        </div>
+                        <button type="submit" name="create_comment" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
                   <!-- Posted Comments -->
 
                 <!-- Comment -->
