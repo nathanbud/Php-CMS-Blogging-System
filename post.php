@@ -60,9 +60,9 @@ if(isset($_POST['create_comment'])){
 $query = "INSERT INTO comments(comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date)";
 $query.="VALUES($the_post_id, '{$comment_author}','{$comment_email}', '{$comment_content}', 'unapproved', now() )";
 
-$insert_comment = mysqli_query($connection,$query );
+$create_comment_query = mysqli_query($connection,$query );
 
-if( !$insert_comment){
+if( !$create_comment_query){
     die("QUERY FAILED". mysqli_error($connection));
   }else{
       Echo "new comment added";

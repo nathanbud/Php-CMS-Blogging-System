@@ -149,7 +149,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="categories.php"><i class="fa fa-fw fa-wrench"></i> Categories </a>
+                        <a href="./categories.php"><i class="fa fa-fw fa-wrench"></i> Categories </a>
                     </li>
                     <!-- <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Categories <i class="fa fa-fw fa-caret-down"></i></a>
@@ -162,7 +162,7 @@
                             </li>
                         </ul>
                     </li> -->
-                    <li class="active">
+                    <li>
                         <a href="./comments.php"><i class="fa fa-fw fa-file"></i> Comments</a>
                     </li>
                     <li>
