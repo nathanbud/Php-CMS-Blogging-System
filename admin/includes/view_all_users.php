@@ -47,8 +47,8 @@
 
                                 
                                 echo "<td>  </td>";
-                                echo "<td><a href='comments.php?approve='>Approve</a> </td>";
-                                echo "<td><a href='comments.php?unapprove='>Unapprove</a> </td>";
+                                echo "<td><a href='users.php?change_to_admin='>Admin</a> </td>";
+                                echo "<td><a href='users.php?change_to_sub='>Subscriber</a> </td>";
                                 echo "<td><a href='posts.php?source=edit_post&p_id='>Edit</a> </td>";
                                 echo "<td><a href='users.php?delete={$user_id}'>Delete</a> </td>";
                                 echo "</tr>";
@@ -61,24 +61,24 @@
 
                          <?php
 
-                            if(isset($_GET['approve'])){
+                            if(isset($_GET['change_to_admin'])){
                                                         
-                                $the_comment_id = $_GET['approve'];
+                                $the_comment_id = $_GET['change_to_admin'];
 
-                                $query = "UPDATE comments SET comment_status ='approved' WHERE comment_id = $the_comment_id ";
+                                $query = "UPDATE users SET user_role ='admin' WHERE user_id = $the_user_id ";
 
-                                $approve_comment_query = mysqli_query($connection, $query);
-                                header("location: comments.php");
+                                $change_admin_query = mysqli_query($connection, $query);
+                                header("location: users.php");
                             }
 
-                            if(isset($_GET['unapprove'])){
+                            if(isset($_GET['change_to_sub'])){
                                
-                                $the_comment_id = $_GET['unapprove'];
+                                $the_comment_id = $_GET['change_to_sub'];
 
-                                $query = "UPDATE comments SET comment_status ='unapproved' WHERE comment_id = $the_comment_id";
+                                $query = "UPDATE users SET user_role ='subscriber' WHERE user_id = $the_user_id ";
 
-                                $unapprove_comment_query = mysqli_query($connection, $query);
-                                header("location: comments.php");
+                                $change_sub_query = mysqli_query($connection, $query);
+                                header("location: users.php");
                             }
 
 
