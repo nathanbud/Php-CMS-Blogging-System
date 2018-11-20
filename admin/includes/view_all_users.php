@@ -41,11 +41,8 @@
                                 // while($row = mysqli_fetch_assoc($select_post_id_query)){
                                 //     $post_id = $row['post_id'];
                                 //     $post_title = $row['post_title'];
-                                    
                                 //     echo "<td> <a href='../post.php?p_id=$post_id'> $post_title</a></td>";
-                                // }
-
-                                
+                                // }                               
                                 echo "<td>  </td>";
                                 echo "<td><a href='users.php?change_to_admin=$user_id'>Admin</a> </td>";
                                 echo "<td><a href='users.php?change_to_sub=$user_id'>Subscriber</a> </td>";
