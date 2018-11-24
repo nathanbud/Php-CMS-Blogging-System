@@ -10,7 +10,7 @@
         <span class="input-group-btn">
             <button name="submit" class="btn btn-default" type="submit">
                 <span class="glyphicon glyphicon-search"></span>
-        </button>
+            </button>
         </span>
     </div>
     </form>
@@ -28,9 +28,7 @@
     <div class="input-group">
         <input name="password" type="password" class="form-control" placeholder="Enter Password">
         <span class="input-group-btn">
-            <button name="login" class="btn btn-primary" type="submit">Submit
-               
-        </button>
+            <button name="login" class="btn btn-primary" type="submit">Submit</button>
         </span>
     </div>
     </form>

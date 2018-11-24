@@ -52,8 +52,6 @@
 <?php  }
  }                     ?>
 
-              
-
             </div>
 
             <!-- Blog Sidebar Widgets Column -->

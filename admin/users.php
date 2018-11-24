@@ -2,7 +2,6 @@
 
 
     <div id="wrapper">
-<?php if($connection){echo "Conn"; }?>
         <!-- Navigation -->
         <?php include "includes/admin_navigation.php" ?>
         <!--End Navigation -->
@@ -42,9 +41,6 @@
 
                         default:
                         include "includes/view_all_users.php";
-
-
-
                      }
                      ?>
                        
