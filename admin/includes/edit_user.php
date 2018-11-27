@@ -23,8 +23,6 @@ if(isset($_GET['edit_user'])){
     $user_email = $_POST['user_email'];
     $user_role = $_POST['user_role'];  
           
-   
-
        $query = "UPDATE users SET ";
        $query .="username = '{$username}', ";
        $query .="user_firstname = '{$user_firstname}', ";
