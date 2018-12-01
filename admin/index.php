@@ -43,10 +43,10 @@
                     <?php
                     $query = "SELECT * FROM posts";
                     $select_all_post = mysqli_query($connection, $query);
-                   $post_counts = mysqli_num_rows($select_all_post); 
+                   $post_count = mysqli_num_rows($select_all_post); 
                     
                     ?>
-                  <div class='huge'><?php echo $post_counts; ?></div>
+                  <div class='huge'><?php echo $post_count; ?></div>
                         <div>Posts</div>
                     </div>
                 </div>
@@ -72,9 +72,9 @@
                      <?php
                     $query = "SELECT * FROM comments";
                     $select_all_comments = mysqli_query($connection, $query);
-                   $comment_counts = mysqli_num_rows($select_all_comments); 
+                   $comment_count = mysqli_num_rows($select_all_comments); 
                   
-                  echo "<div class='huge'>{$comment_counts}</div>"; 
+                  echo "<div class='huge'>{$comment_count}</div>"; 
                     ?>
 
                      
@@ -102,9 +102,9 @@
                     <?php
                     $query = "SELECT * FROM users";
                     $select_all_users = mysqli_query($connection, $query);
-                   $users_counts = mysqli_num_rows($select_all_users); 
+                   $user_count = mysqli_num_rows($select_all_users); 
                   
-                  echo "<div class='huge'>{$users_counts}</div>"; 
+                  echo "<div class='huge'>{$user_count}</div>"; 
                     ?>
                         <div> Users</div>
                     </div>
@@ -130,9 +130,9 @@
                     <?php
                     $query = "SELECT * FROM categories";
                     $select_all_categories = mysqli_query($connection, $query);
-                   $categories_counts = mysqli_num_rows($select_all_categories); 
+                   $category_count = mysqli_num_rows($select_all_categories); 
                   
-                  echo "<div class='huge'>{$categories_counts}</div>"; 
+                  echo "<div class='huge'>{$category_count}</div>"; 
                     ?>
                          <div>Categories</div>
                     </div>
@@ -148,6 +148,22 @@
         </div>
     </div>
 </div>
+
+<?php 
+ $query = "SELECT * FROM posts WHERE post_status = 'draft' ";
+ $select_all_draft_post = mysqli_query($connection, $query);
+$post_draft_count = mysqli_num_rows($select_all_draft_post); 
+
+$query = "SELECT * FROM comments WHERE comment_status = 'unapproved' ";
+$unapproved_comments_post = mysqli_query($connection, $query);
+$unapproved_comment_count = mysqli_num_rows($unapproved_comments_post); 
+
+$query = "SELECT * FROM users WHERE user_role = 'subscriber' ";
+$select_all_subscribers = mysqli_query($connection, $query);
+$subscriber_count = mysqli_num_rows($select_all_subscribers); 
+
+
+?>
                 <!-- /widgets row -->
 <div class="row">
 <script type="text/javascript">
@@ -156,17 +172,27 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
+          ['Data', 'Count'],
+          
+          <?php 
+        $element_text = ['Active Posts','Draft Posts', 'Comments', 'Pending Comments', 'Users', 'Subscribers', 'Categories'];
+        $element_count = [$post_count, $post_draft_count, $comment_count, $unapproved_comment_count, $user_count, $subscriber_count, $category_count];
+        $element_len = count($element_text);
+      
+      
+        for($i = 0; $i <$element_len; $i++){
+
+            echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
+        }
+
+        ?>
+
         ]);
 
         var options = {
           chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+            title: 'Blog Status',
+            subtitle: 'Post, Comments, Users, Categories ',
           }
         };
 
@@ -175,8 +201,11 @@
         chart.draw(data, google.charts.Bar.convertOptions(options));
       }
     </script>
+    <div class="row">
+    <hr>
+    </div>
 
- <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+ <div id="columnchart_material" style="width:auto; height: 500px;"></div>
 
 
 </div>
