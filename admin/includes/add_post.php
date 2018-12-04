@@ -56,9 +56,12 @@ confirm($create_post_query);
     <input type="text" class="form-control" name="author">
     </div>
 
-    <div class="form-group">
-    <label for="">Post Status</label>
-    <input type="text" class="form-control" name="post_status">
+     <div class="form-group">
+   <select name="post_status" id="post_status">
+        <option value="subscriber">Select Status</option>
+        <option value="published">Publish</option>
+        <option value="draft">Draft</option>
+   </select>
     </div>
 
     <div class="form-group">
