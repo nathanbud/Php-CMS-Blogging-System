@@ -1,6 +1,41 @@
+<?php
+
+if(isset($_POST['checkBoxArray'])){
+   
+    $checkBox =  $_POST['checkBoxArray'];
+
+    foreach ($checkBox as $checkBoxValue ) {
+       
+        $bulk_options = $_POST['bulk_options'];
+        echo "hehehee";
+    }
+
+   
+}
+
+
+
+
+?>
+<form action="" method="post">
 <table class="table table-bordered table-hover">
+
+<div id="bulkOptionsContanier" class="col-xs-4">
+<select name="bulk_options" id="" class="form-control">
+    <option value="">Select Options</option>
+    <option value="">Publish</option>
+    <option value="">Draft</option>
+    <option value="">Delete</option>
+</select>
+
+</div>
+<div class="col-xs-4">
+<input type="submit" name="submit" class="btn btn-success" value="Apply">
+<a class="btn btn-primary" href="add_post.php" >Add New</a>
+</div>
                             <thead>
                                 <tr>
+                               
                                     <th>Id</th>
                                     <th>Author</th>
                                     <th>Title</th>
@@ -30,6 +65,9 @@
                                 $post_date = $row['post_date'];
                                 
                                 echo "<tr>";
+                                ?>
+                                <td><input type='checkbox' class='checkBoxes' name="checkBoxArray[]" value='<?php echo $post_id; ?>'> </td>;
+                                <?php
                                 echo "<td> $post_id </td>";
                                 echo "<td> $post_author </td>";
                                 echo "<td> $post_title </td>";
@@ -57,6 +95,9 @@
                         </tbody>
                         </table>
 
+                        </form>
+                        <div class="row">
+                        <div class="col-sm-12">
                          <?php
                              if(isset($_GET['delete'])){
                                
@@ -69,3 +110,6 @@
                              }
                             
                             ?>
+
+                            </div>
+                            </div>
