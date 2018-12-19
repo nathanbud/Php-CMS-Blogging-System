@@ -5,20 +5,19 @@ ClassicEditor
     });
 
 $(document).ready(function () {
+    console.log("dfdf");
 
-    $('#selecAllBoxdes')
-        .click(function (event) {
-            if (this.checked) {
-                $('.checkBoxes')
-                    .each(function () {
-                        this.checked = true;
-                    });
-            } else {
-                $('.checkBoxes')
-                    .each(function () {
-                        this.checked = false;
-                    });
-            }
-        })
-
-})
+    $('#selectAllBoxes').click(function (event) {
+        if (this.checked) {
+            $('.checkBoxes')
+                .each(function () {
+                    this.checked = true;
+                });
+        } else {
+            $('.checkBoxes')
+                .each(function () {
+                    this.checked = false;
+                });
+        }
+    })
+});

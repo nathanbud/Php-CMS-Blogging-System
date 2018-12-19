@@ -38,10 +38,8 @@ if(isset($_POST['checkBoxArray'])){
     }
 }
 
-
-
-
 ?>
+
 <form action="" method="post">
 <table class="table table-bordered table-hover">
 
@@ -60,7 +58,7 @@ if(isset($_POST['checkBoxArray'])){
 </div>
                             <thead>
                                 <tr>
-                                <th><input type='checkbox' class='checkBoxes' name="checkBoxArray[]" value='<?php echo $post_id; ?>'></th>
+                                <th><input id="selectAllBoxes" type='checkbox' class='checkBoxes'></th>
                                     <th>Id</th>
                                     <th>Author</th>
                                     <th>Title</th>
