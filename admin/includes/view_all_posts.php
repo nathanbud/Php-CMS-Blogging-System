@@ -43,7 +43,7 @@ if(isset($_POST['checkBoxArray'])){
 <form action="" method="post">
 <table class="table table-bordered table-hover">
 
-<div id="bulkOptionsContanier" class="col-xs-4">
+<div id="bulkOptionsContainer" class="col-xs-4">
 <select name="bulk_options" id="" class="form-control">
     <option value="">Select Options</option>
     <option value="published">Publish</option>
@@ -54,7 +54,7 @@ if(isset($_POST['checkBoxArray'])){
 </div>
 <div class="col-xs-4">
 <input type="submit" name="submit" class="btn btn-success" value="Apply">
-<a class="btn btn-primary" href="add_post.php" >Add New</a>
+<a class="btn btn-primary" href="posts.php?source=add_post" >Add New</a>
 </div>
                             <thead>
                                 <tr>
@@ -89,7 +89,7 @@ if(isset($_POST['checkBoxArray'])){
                                 
                                 echo "<tr>";
                                 ?>
-                                <td><input type='checkbox' class='checkBoxes' name="checkBoxArray[]" value='<?php echo $post_id; ?>'> </td>;
+                                <td><input type='checkbox' class='checkBoxes' name="checkBoxArray[]" value='<?php echo $post_id; ?>'> </td>
                                 <?php
                                 echo "<td> $post_id </td>";
                                 echo "<td> $post_author </td>";

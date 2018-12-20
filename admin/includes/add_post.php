@@ -21,6 +21,10 @@ $query.= "VALUES({$post_category_id}, '{$post_title}', '{$post_author}',now(), '
 $create_post_query = mysqli_query($connection, $query);
 
 confirm($create_post_query);
+
+$the_new_post_id = mysqli_insert_id($connection);
+
+echo "<p class='bg-success'>Post Created. <a href='../post.php?p_id={$the_new_post_id}'>View Post</a> or <a href='posts.php'>Edit More Post</a></p>";
 }
 
 ?>
