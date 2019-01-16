@@ -31,6 +31,10 @@
                         case 'add_post';
                         include "includes/add_post.php";
                         break;
+
+                        case 'add_member';
+                        include "includes/add_member.php";
+                        break;
                         
                         case 'edit_post';
                         include "includes/edit_post.php";

@@ -11,11 +11,6 @@ if(!isset($_SESSION['user_role'])){
     // }
 }
 
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +27,8 @@ if(!isset($_SESSION['user_role'])){
     <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.css" rel="stylesheet"> -->
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
